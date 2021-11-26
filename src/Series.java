@@ -1,3 +1,7 @@
+import com.google.gson.annotations.SerializedName;
+
+import java.util.Arrays;
+
 /**
  * The {@code Series} class will be in charge of saving a Series together with its attributes, such as its diferent Titles, popularity, averageScore, etc.
  * @see Series#Series(String, String, String, int, int, int, String, String[], int, int, int)
@@ -20,8 +24,11 @@ public class Series {
      * Will be used for saving the different titles of a Series
      */
     private class SeriesTitle {
+        @SerializedName("romaji")
         String romajiTitle;
+        @SerializedName("english")
         String englishTitle;
+        @SerializedName("native")
         String nativeTitle;
 
         SeriesTitle(String romajiTitle, String englishTitle, String nativeTitle){
