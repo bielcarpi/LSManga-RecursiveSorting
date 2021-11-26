@@ -81,4 +81,17 @@ public class Series {
     public void sanitize(){
 
     }
+
+    @Override
+    public String toString() {
+        return "Series{" +
+                "title=" + title.englishTitle +
+                ", popularity=" + popularity +
+                ", averageScore=" + averageScore +
+                ", favourites=" + favourites +
+                ", type='" + type + '\'' +
+                ", genres=" + Arrays.toString(genres) +
+                ", startDate=" + startDate.day + startDate.month + startDate.year +
+                '}';
+    }
 }
