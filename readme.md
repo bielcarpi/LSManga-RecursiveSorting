@@ -1,10 +1,10 @@
-<p style="text-align: center">
-  <img src="resources/lsmanga-logo.png" alt="LSManga logo">
+<p align="center">
+  <img src="resources/lsmanga-logo.png" alt="LSManga logo" width="400">
 </p>
 
-<h1 style="text-align: center">LSManga - Recursive Sorting</h1>
+<h1 align="center">LSManga - Recursive Sorting</h1>
 
-<p style="text-align: center">
+<p align="center">
   <a href="https://www.java.com">
     <img src="https://img.shields.io/badge/Java-17-red.svg">
   </a>
@@ -16,7 +16,7 @@
   </a>
 </p>
 
-<p style="text-align: center">
+<p align="center">
     LSManga is a University Project for Recursive Sorting datasets of manga series opinions. It implements QuickSort, MergeSort and BucketSort.
 </p>
 
@@ -28,7 +28,7 @@
 - [x] Measure how long it takes for an algorithm to order a Dataset
 
 ## Dataset Entry Example
-<img style="border-radius: 15px" src="resources/dataset-example.png" alt="Dataset Example">
+<img style="border-radius: 15px" src="resources/dataset-example.png" alt="Dataset Example" height="400">
 
 ## How To Use
 ```bash
