@@ -1,3 +1,9 @@
+import com.google.gson.Gson;
+import com.google.gson.JsonSyntaxException;
+
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 
 /**
  * The {@code SeriesManager} class will be able to read/write series from/to files and perform operations with them
@@ -34,7 +40,31 @@ public class SeriesManager {
      * @see Dataset
      */
     public void loadDataset(Dataset ds){
+        try{
+            BufferedReader br = new BufferedReader(new FileReader(ds.path));
+            Gson gson = new Gson();
+            SeriesObject seriesObject = gson.fromJson(br, SeriesObject.class);
+            this.series = seriesObject.series;
 
+            //Sanitize all series (just in case)
+            for(Series serie: series)
+                serie.sanitize();
+
+        }catch(IOException e){
+            System.err.println("Error. The dataset " + ds.name() + " doesn't exist or can't be read.");
+            e.printStackTrace();
+        }catch(JsonSyntaxException e){
+            System.err.println("Error. The dataset " + ds.name() + " is not properly formatted.");
+            e.printStackTrace();
+        }
+
+    }
+
+    /**
+     * Inner class so as to match the JSON format
+     */
+    private class SeriesObject{
+        Series[] series;
     }
 
     /**
