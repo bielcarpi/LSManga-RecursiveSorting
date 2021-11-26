@@ -67,6 +67,8 @@ public class SeriesManager {
         Series[] series;
     }
 
+
+
     /**
      * Generates a Dataset with the correspondent file in the system
      * <p>If the file already exists, its contents will be deleted

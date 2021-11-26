@@ -1,9 +1,12 @@
 import com.google.gson.annotations.SerializedName;
 
 import java.util.Arrays;
+import java.util.Calendar;
 
 /**
  * The {@code Series} class will be in charge of saving a Series together with its attributes, such as its diferent Titles, popularity, averageScore, etc.
+ * <p>If a Series is deserialized with Gson, {@link #sanitize()} must be called before that. If not, the class can not work as expected.
+ *
  * @see Series#Series(String, String, String, int, int, int, String, String[], int, int, int)
  *
  * @author bielcarpi
@@ -40,6 +43,7 @@ public class Series {
 
     private class SeriesStartDate {
         int year, month, day;
+        Calendar calendar;
 
         SeriesStartDate(int year, int month, int day){
             this.year = year;
@@ -71,6 +75,8 @@ public class Series {
         this.type = type;
         this.genres = genres;
         startDate = new SeriesStartDate(year, month, day);
+
+        sanitize();
     }
 
 
@@ -79,7 +85,23 @@ public class Series {
      * Call this method for ensure a proper sanitizing of all Series attributes
      */
     public void sanitize(){
+        //Sanitize day/month/year
+        if(startDate.day < 1 || startDate.day > 31)
+            startDate.day = 1;
+        if(startDate.month < 1 || startDate.month > 12)
+            startDate.month = 1;
+        if(startDate.year < 1930 || startDate.year > 2100)
+            startDate.year = 1970;
 
+        //Create calendar with current sanitized values
+        startDate.calendar = Calendar.getInstance();
+        startDate.calendar.set(startDate.year, startDate.month, startDate.day);
+
+        //Sanitize other fields: popularity, avgScore, favourites and type
+        if(popularity < 0) popularity = 0;
+        if(averageScore < 0) averageScore = 0;
+        if(favourites < 0) favourites = 0;
+        if(!type.equals("MANGA") && !type.equals("ANIME")) type = null;
     }
 
     @Override
