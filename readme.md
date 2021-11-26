@@ -1,5 +1,5 @@
-<p align="center">
-  <img src="resources/lsmanga-logo.png" alt="LSManga logo" width="400">
+<p align="center" style="margin-top: 50px">
+  <img src="resources/lsmanga-logo.png" alt="LSManga logo" width="500">
 </p>
 
 <h1 align="center">LSManga - Recursive Sorting</h1>
