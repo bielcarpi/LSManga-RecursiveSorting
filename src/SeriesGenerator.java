@@ -9,6 +9,10 @@ public class SeriesGenerator {
                                                      "Sports", "Horror", "Psychological", "Thriller", "Fantasy"};
     private static final int MAX_POSSIBLE_GENRES = 3;
     private static final int YEARS_FROM_1970 = 51;
+    private static final String[] WORDS_ROMAJI = {"Initial", "Stage", "Naruto", "One", "Piece", "Sunabozu", "Trinity", "Blood", "Evangelion", "Seiki", "Koukaku", "Rurouni", "Chobits", "Ninpouchou"};
+    private static final String[] WORDS_ENGLISH = {"Initial", "Stage", "Naruto", "One", "Piece", "Desert Punk", "Trinity", "Blood", "Evangelion", "Genesis", "Ghost", "Samurai", "Chobits", "Ninja"};
+    private static final String[] WORDS_NATIVE = {"頭文字", "STAGE", "ナルト", "ワンピース", "砂ぼ", "うず", "トリニティ", "ブラッド", "リオン", "新世紀", "攻殻", "るろう", "ちょびっツ", "甲賀忍"};
+    private static final int MAX_POSSIBLE_WORDS = 4;
 
     private static final Random r = new Random();
 
@@ -24,7 +28,8 @@ public class SeriesGenerator {
      * @return integer array with length 3 (see description for more info)
      */
     public static int[] getAudience(){
-        return new int[]{r.nextInt(MAX_POPULARITY + 1), r.nextInt(MAX_SCORE + 1), r.nextInt(popularity + 1)};
+        int popularity = r.nextInt(MAX_POPULARITY + 1);
+        return new int[]{popularity, r.nextInt(MAX_SCORE + 1), r.nextInt(popularity + 1)};
     }
 
     /**
@@ -41,7 +46,7 @@ public class SeriesGenerator {
      * @return Random Genres array for a Series
      */
     public static String[] getGenres(){
-        int numGenres = r.nextInt(MAX_POSSIBLE_GENRES + 1);
+        int numGenres = 1 + r.nextInt(MAX_POSSIBLE_GENRES);
         String[] genres = new String[numGenres];
 
         for(int i = 0; i < genres.length; i++){
@@ -59,5 +64,41 @@ public class SeriesGenerator {
      */
     public static int[] getPremiereDate(){
         return new int[]{1970 + r.nextInt(YEARS_FROM_1970 + 1), 1 + r.nextInt(12), 1 + r.nextInt(28)};
+    }
+
+    /**
+     * This method generates random titles for a Series.
+     * <p>Each Series has three titles, so the method will return an array with length 3:
+     * <ul>
+     *     <li>0 -> Romaji Title</li>
+     *     <li>1 -> English Title</li>
+     *     <li>2 -> Native Title</li>
+     * </ul>
+     * @return String of length 3 with randomly-generated titles
+     */
+    public static String[] getTitles(){
+        String[] titles = new String[]{"", "", ""};
+
+        int words = 1 + r.nextInt(MAX_POSSIBLE_WORDS);
+        int[] wordsIndex = new int[words];
+
+
+        //Get random words' index
+        for(int i = 0; i < words; i++)
+            wordsIndex[i] = r.nextInt(WORDS_ROMAJI.length);
+
+        //Generate Titles from words' index
+        for(int index: wordsIndex){
+            titles[0] += (WORDS_ROMAJI[index] + " ");
+            titles[1] += (WORDS_ENGLISH[index] + " ");
+            titles[2] += (WORDS_NATIVE[index] + " ");
+        }
+
+        //Remove last space " " character
+        titles[0] = titles[0].substring(0, titles[0].length() - 1);
+        titles[1] = titles[1].substring(0, titles[1].length() - 1);
+        titles[2] = titles[2].substring(0, titles[2].length() - 1);
+
+        return titles;
     }
 }
