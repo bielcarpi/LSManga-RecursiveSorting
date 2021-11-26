@@ -13,14 +13,15 @@
  * <p>The ones that will always exist will be the S, M and L datasets. Other ones need to be build previously.</p>
  */
 public enum Dataset {
-    XS("series_xs.json"),
-    S("series_s.json"),
-    M("series_m.json"),
-    L("series_l.json"),
-    XL("series_xl.json"),
-    XXL("series_xxl.json"),
-    XXXL("series_xxxl.json");
+    XS(Dataset.relativePath + "series_xs.json"),
+    S(Dataset.relativePath + "series_s.json"),
+    M(Dataset.relativePath + "series_m.json"),
+    L(Dataset.relativePath + "series_l.json"),
+    XL(Dataset.relativePath + "series_xl.json"),
+    XXL(Dataset.relativePath + "series_xxl.json"),
+    XXXL(Dataset.relativePath + "series_xxxl.json");
 
+    static final String relativePath = "resources/";
     String path;
     Dataset(String path){
         this.path = path;
