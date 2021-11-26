@@ -7,7 +7,7 @@ import java.util.Calendar;
  * The {@code Series} class will be in charge of saving a Series together with its attributes, such as its diferent Titles, popularity, averageScore, etc.
  * <p>If a Series is deserialized with Gson, {@link #sanitize()} must be called before that. If not, the class can not work as expected.
  *
- * @see Series#Series(String, String, String, int, int, int, String, String[], int, int, int)
+ * @see Series#Series(String[], int[], String, String[], int[]) 
  *
  * @author bielcarpi
  * @version 1.0
@@ -43,7 +43,7 @@ public class Series {
 
     private class SeriesStartDate {
         int year, month, day;
-        Calendar calendar;
+        transient Calendar calendar;
 
         SeriesStartDate(int year, int month, int day){
             this.year = year;
@@ -55,26 +55,20 @@ public class Series {
 
     /**
      * Default Series Constructor
-     * @param romajiTitle The Title of the Series in Romaji
-     * @param englishTitle The Title of the Series in English
-     * @param nativeTitle The Title of the Series in native
-     * @param popularity How many people have seen this Series
-     * @param averageScore The average score of the people
-     * @param favourites How many people marked this Series as favourite
+     * @param titles Array containing the titles of the Series in romaji, english and native
+     * @param audience Array containing the popularity, averageScore and favourites of the Series
      * @param type The Type of Series. Either "MANGA" or "ANIME"
      * @param genres Array with different generes that this Series represents
-     * @param year Year of premiere
-     * @param month Month of premiere
-     * @param day Day of premiere
+     * @param yearMonthDate Array containing the year, month and date of the premiere of this Series
      */
-    public Series(String romajiTitle, String englishTitle, String nativeTitle, int popularity, int averageScore, int favourites, String type, String[] genres, int year, int month, int day){
-        title = new SeriesTitle(romajiTitle, englishTitle, nativeTitle);
-        this.popularity = popularity;
-        this.averageScore = averageScore;
-        this.favourites = favourites;
+    public Series(String[] titles, int[] audience, String type, String[] genres, int[] yearMonthDate){
+        title = new SeriesTitle(titles[0], titles[1], titles[2]);
+        this.popularity = audience[0];
+        this.averageScore = audience[1];
+        this.favourites = audience[2];
         this.type = type;
         this.genres = genres;
-        startDate = new SeriesStartDate(year, month, day);
+        startDate = new SeriesStartDate(yearMonthDate[0], yearMonthDate[1], yearMonthDate[2]);
 
         sanitize();
     }
