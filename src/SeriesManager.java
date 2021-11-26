@@ -1,9 +1,8 @@
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import com.google.gson.JsonSyntaxException;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 
 /**
  * The {@code SeriesManager} class will be able to read/write series from/to files and perform operations with them
@@ -50,6 +49,8 @@ public class SeriesManager {
             for(Series serie: series)
                 serie.sanitize();
 
+            br.close();
+
         }catch(IOException e){
             System.err.println("Error. The dataset " + ds.name() + " doesn't exist or can't be read.");
             e.printStackTrace();
@@ -70,14 +71,35 @@ public class SeriesManager {
 
 
     /**
-     * Generates a Dataset with the correspondent file in the system
+     * Generates a Dataset with the correspondent file in the system.
+     * <p>The dataset generated will be already loaded, without the need of calling {@link #loadDataset(Dataset)}
      * <p>If the file already exists, its contents will be deleted
      * @param ds The Dataset we want to generate
      *
      * @see Dataset
      */
     public void generateDataset(Dataset ds){
+        series = new Series[ds.numElements];
 
+        //Create all new Series to fill the series array
+        for(int i = 0; i < series.length; i++)
+            series[i] = new Series(SeriesGenerator.getTitles(), SeriesGenerator.getAudience(), SeriesGenerator.getType(), SeriesGenerator.getGenres(), SeriesGenerator.getPremiereDate());
+
+        //Write them on a file
+        try{
+            SeriesObject seriesObject = new SeriesObject();
+            seriesObject.series = series;
+
+            BufferedWriter bw = new BufferedWriter(new FileWriter(ds.path));
+            Gson gson = new GsonBuilder().setPrettyPrinting().create(); //We want the gson.toJson() method to give us a beautified JSON
+
+            bw.write(gson.toJson(seriesObject));
+            bw.close();
+
+        }catch(IOException e){
+            System.err.println("Error. The dataset " + ds.name() + " has been generated (it is loaded) but can't be written.");
+            e.printStackTrace();
+        }
     }
 
 }

@@ -88,6 +88,7 @@ public class SeriesGenerator {
             wordsIndex[i] = r.nextInt(WORDS_ROMAJI.length);
 
         //Generate Titles from words' index
+        //Again, Words can be repeated in a title (performance reasons)
         for(int index: wordsIndex){
             titles[0] += (WORDS_ROMAJI[index] + " ");
             titles[1] += (WORDS_ENGLISH[index] + " ");
