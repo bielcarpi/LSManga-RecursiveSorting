@@ -8,6 +8,8 @@ public class SeriesGenerator {
                                                      "Mystery", "Supernatural", "Romance", "Slice of Life",
                                                      "Sports", "Horror", "Psychological", "Thriller", "Fantasy"};
     private static final int MAX_POSSIBLE_GENRES = 3;
+    private static final int YEARS_FROM_1970 = 51;
+
     private static final Random r = new Random();
 
     /**
@@ -49,5 +51,13 @@ public class SeriesGenerator {
         }
 
         return genres;
+    }
+
+    /**
+     * This method generates a random Premiere Date for a Series.
+     * @return Array of 3 int representing year (0), month (1) and day (2)
+     */
+    public static int[] getPremiereDate(){
+        return new int[]{1970 + r.nextInt(YEARS_FROM_1970 + 1), 1 + r.nextInt(12), 1 + r.nextInt(28)};
     }
 }
