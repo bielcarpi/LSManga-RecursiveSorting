@@ -28,7 +28,7 @@
 - [x] Measure how long it takes for an algorithm to order a Dataset
 
 ## Dataset Entry Example
-<img style="border-radius: 15px" src="./resources/dataset-example.png" alt="Dataset Example">
+<img style="border-radius: 15px" src="resources/dataset-example.png" alt="Dataset Example">
 
 ## How To Use
 ```bash
