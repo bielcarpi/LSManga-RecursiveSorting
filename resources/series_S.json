@@ -1,0 +1,1092 @@
+{
+    "series": [
+        {
+            "title": {
+                "romaji": "Cowboy Bebop",
+                "english": "Cowboy Bebop",
+                "native": "カウボーイビバップ"
+            },
+            "popularity": 223468,
+            "averageScore": 86,
+            "favourites": 15956,
+            "type": "ANIME",
+            "genres": [
+                "Action",
+                "Adventure",
+                "Drama",
+                "Sci-Fi"
+            ],
+            "startDate": {
+                "year": 1998,
+                "month": 4,
+                "day": 3
+            }
+        },
+        {
+            "title": {
+                "romaji": "Cowboy Bebop: Tengoku no Tobira",
+                "english": "Cowboy Bebop: The Movie - Knockin' on Heaven's Door",
+                "native": "カウボーイビバップ天国の扉"
+            },
+            "popularity": 42707,
+            "averageScore": 82,
+            "favourites": 796,
+            "type": "ANIME",
+            "genres": [
+                "Action",
+                "Drama",
+                "Mystery",
+                "Sci-Fi"
+            ],
+            "startDate": {
+                "year": 2001,
+                "month": 9,
+                "day": 1
+            }
+        },
+        {
+            "title": {
+                "romaji": "Trigun",
+                "english": "Trigun",
+                "native": "トライガン"
+            },
+            "popularity": 75225,
+            "averageScore": 79,
+            "favourites": 2590,
+            "type": "ANIME",
+            "genres": [
+                "Action",
+                "Adventure",
+                "Comedy",
+                "Drama",
+                "Sci-Fi"
+            ],
+            "startDate": {
+                "year": 1998,
+                "month": 4,
+                "day": 1
+            }
+        },
+        {
+            "title": {
+                "romaji": "Witch Hunter Robin",
+                "english": "Witch Hunter Robin",
+                "native": "ウィッチハンター ロビン"
+            },
+            "popularity": 11028,
+            "averageScore": 68,
+            "favourites": 91,
+            "type": "ANIME",
+            "genres": [
+                "Action",
+                "Drama",
+                "Mystery",
+                "Supernatural"
+            ],
+            "startDate": {
+                "year": 2002,
+                "month": 7,
+                "day": 2
+            }
+        },
+        {
+            "title": {
+                "romaji": "Bouken Ou Beet",
+                "english": "Beet the Vandel Buster",
+                "native": "冒険王ビィト"
+            },
+            "popularity": 1579,
+            "averageScore": 63,
+            "favourites": 9,
+            "type": "ANIME",
+            "genres": [
+                "Adventure",
+                "Fantasy",
+                "Supernatural"
+            ],
+            "startDate": {
+                "year": 2004,
+                "month": 9,
+                "day": 30
+            }
+        },
+        {
+            "title": {
+                "romaji": "Eyeshield 21",
+                "english": "Eyeshield 21",
+                "native": "アイシールド21"
+            },
+            "popularity": 18978,
+            "averageScore": 75,
+            "favourites": 402,
+            "type": "ANIME",
+            "genres": [
+                "Action",
+                "Comedy",
+                "Sports"
+            ],
+            "startDate": {
+                "year": 2005,
+                "month": 4,
+                "day": 6
+            }
+        },
+        {
+            "title": {
+                "romaji": "Hachimitsu to Clover",
+                "english": "Honey and Clover",
+                "native": "ハチミツとクローバー"
+            },
+            "popularity": 33790,
+            "averageScore": 76,
+            "favourites": 608,
+            "type": "ANIME",
+            "genres": [
+                "Comedy",
+                "Drama",
+                "Romance",
+                "Slice of Life"
+            ],
+            "startDate": {
+                "year": 2005,
+                "month": 4,
+                "day": 15
+            }
+        },
+        {
+            "title": {
+                "romaji": "Hungry Heart: Wild Striker",
+                "english": null,
+                "native": "ハングリーハート Wild Striker"
+            },
+            "popularity": 2633,
+            "averageScore": 70,
+            "favourites": 32,
+            "type": "ANIME",
+            "genres": [
+                "Comedy",
+                "Slice of Life",
+                "Sports"
+            ],
+            "startDate": {
+                "year": 2002,
+                "month": 9,
+                "day": 11
+            }
+        },
+        {
+            "title": {
+                "romaji": "Initial D FOURTH STAGE",
+                "english": null,
+                "native": "頭文字〈イニシャル〉D FOURTH STAGE"
+            },
+            "popularity": 20919,
+            "averageScore": 79,
+            "favourites": 382,
+            "type": "ANIME",
+            "genres": [
+                "Action",
+                "Drama",
+                "Sports"
+            ],
+            "startDate": {
+                "year": 2004,
+                "month": 4,
+                "day": 17
+            }
+        },
+        {
+            "title": {
+                "romaji": "MONSTER",
+                "english": "Monster",
+                "native": "MONSTER"
+            },
+            "popularity": 120231,
+            "averageScore": 87,
+            "favourites": 8020,
+            "type": "ANIME",
+            "genres": [
+                "Drama",
+                "Horror",
+                "Mystery",
+                "Psychological",
+                "Thriller"
+            ],
+            "startDate": {
+                "year": 2004,
+                "month": 4,
+                "day": 7
+            }
+        },
+        {
+            "title": {
+                "romaji": "Naruto",
+                "english": "Naruto",
+                "native": "ナルト"
+            },
+            "popularity": 341483,
+            "averageScore": 80,
+            "favourites": 22114,
+            "type": "ANIME",
+            "genres": [
+                "Action",
+                "Comedy"
+            ],
+            "startDate": {
+                "year": 2002,
+                "month": 10,
+                "day": 3
+            }
+        },
+        {
+            "title": {
+                "romaji": "One Piece",
+                "english": "One Piece",
+                "native": "ワンピース"
+            },
+            "popularity": 281240,
+            "averageScore": 86,
+            "favourites": 37470,
+            "type": "ANIME",
+            "genres": [
+                "Action",
+                "Adventure",
+                "Comedy",
+                "Drama",
+                "Fantasy"
+            ],
+            "startDate": {
+                "year": 1999,
+                "month": 10,
+                "day": 20
+            }
+        },
+        {
+            "title": {
+                "romaji": "Tennis no Ouji-sama",
+                "english": "The Prince of Tennis",
+                "native": "テニスの王子様"
+            },
+            "popularity": 18837,
+            "averageScore": 74,
+            "favourites": 364,
+            "type": "ANIME",
+            "genres": [
+                "Action",
+                "Comedy",
+                "Sports"
+            ],
+            "startDate": {
+                "year": 2001,
+                "month": 10,
+                "day": 10
+            }
+        },
+        {
+            "title": {
+                "romaji": "Ring ni Kakero 1",
+                "english": null,
+                "native": "リングにかけろ１"
+            },
+            "popularity": 755,
+            "averageScore": 53,
+            "favourites": 5,
+            "type": "ANIME",
+            "genres": [
+                "Action",
+                "Sports"
+            ],
+            "startDate": {
+                "year": 2004,
+                "month": 10,
+                "day": 6
+            }
+        },
+        {
+            "title": {
+                "romaji": "School Rumble",
+                "english": null,
+                "native": "スクールランブル"
+            },
+            "popularity": 34039,
+            "averageScore": 76,
+            "favourites": 676,
+            "type": "ANIME",
+            "genres": [
+                "Comedy",
+                "Romance"
+            ],
+            "startDate": {
+                "year": 2004,
+                "month": 10,
+                "day": 5
+            }
+        },
+        {
+            "title": {
+                "romaji": "Sunabouzu",
+                "english": "Desert Punk",
+                "native": "砂ぼうず"
+            },
+            "popularity": 14841,
+            "averageScore": 68,
+            "favourites": 139,
+            "type": "ANIME",
+            "genres": [
+                "Action",
+                "Adventure",
+                "Comedy",
+                "Ecchi",
+                "Sci-Fi"
+            ],
+            "startDate": {
+                "year": 2004,
+                "month": 10,
+                "day": 6
+            }
+        },
+        {
+            "title": {
+                "romaji": "TEXHNOLYZE",
+                "english": "Texhnolyze",
+                "native": "TEXHNOLYZE"
+            },
+            "popularity": 37340,
+            "averageScore": 76,
+            "favourites": 1353,
+            "type": "ANIME",
+            "genres": [
+                "Action",
+                "Drama",
+                "Psychological",
+                "Sci-Fi"
+            ],
+            "startDate": {
+                "year": 2003,
+                "month": 4,
+                "day": 17
+            }
+        },
+        {
+            "title": {
+                "romaji": "Trinity Blood",
+                "english": "Trinity Blood",
+                "native": "トリニティ・ブラッド"
+            },
+            "popularity": 14435,
+            "averageScore": 67,
+            "favourites": 139,
+            "type": "ANIME",
+            "genres": [
+                "Action",
+                "Drama",
+                "Horror",
+                "Sci-Fi",
+                "Supernatural"
+            ],
+            "startDate": {
+                "year": 2005,
+                "month": 4,
+                "day": 29
+            }
+        },
+        {
+            "title": {
+                "romaji": "Yakitate!! Japan",
+                "english": null,
+                "native": "焼きたて!! ジャぱん"
+            },
+            "popularity": 11046,
+            "averageScore": 75,
+            "favourites": 170,
+            "type": "ANIME",
+            "genres": [
+                "Comedy"
+            ],
+            "startDate": {
+                "year": 2004,
+                "month": 10,
+                "day": 12
+            }
+        },
+        {
+            "title": {
+                "romaji": "Zipang",
+                "english": null,
+                "native": "ジパング"
+            },
+            "popularity": 3225,
+            "averageScore": 70,
+            "favourites": 29,
+            "type": "ANIME",
+            "genres": [
+                "Action",
+                "Sci-Fi"
+            ],
+            "startDate": {
+                "year": 2004,
+                "month": 10,
+                "day": 7
+            }
+        },
+        {
+            "title": {
+                "romaji": "Shin Seiki Evangelion",
+                "english": "Neon Genesis Evangelion",
+                "native": "新世紀エヴァンゲリオン"
+            },
+            "popularity": 217713,
+            "averageScore": 83,
+            "favourites": 20526,
+            "type": "ANIME",
+            "genres": [
+                "Action",
+                "Drama",
+                "Mecha",
+                "Mystery",
+                "Psychological",
+                "Sci-Fi"
+            ],
+            "startDate": {
+                "year": 1995,
+                "month": 10,
+                "day": 3
+            }
+        },
+        {
+            "title": {
+                "romaji": "Shin Seiki Evangelion Gekijouban: Shi to Shinsei",
+                "english": "Neon Genesis Evangelion: Death & Rebirth",
+                "native": "新世紀エヴァンゲリオン劇場版 シト新生"
+            },
+            "popularity": 31245,
+            "averageScore": 72,
+            "favourites": 340,
+            "type": "ANIME",
+            "genres": [
+                "Drama",
+                "Mecha",
+                "Psychological",
+                "Sci-Fi"
+            ],
+            "startDate": {
+                "year": 1997,
+                "month": 3,
+                "day": 15
+            }
+        },
+        {
+            "title": {
+                "romaji": "Shin Seiki Evangelion: THE END OF EVANGELION",
+                "english": "Neon Genesis Evangelion: The End of Evangelion",
+                "native": "新世紀エヴァンゲリオン劇場版 THE END OF EVANGELION"
+            },
+            "popularity": 111287,
+            "averageScore": 85,
+            "favourites": 9522,
+            "type": "ANIME",
+            "genres": [
+                "Action",
+                "Drama",
+                "Mecha",
+                "Psychological",
+                "Sci-Fi"
+            ],
+            "startDate": {
+                "year": 1997,
+                "month": 7,
+                "day": 19
+            }
+        },
+        {
+            "title": {
+                "romaji": "Kenpuu Denki Berserk",
+                "english": "Berserk",
+                "native": "剣風伝奇ベルセルク"
+            },
+            "popularity": 65435,
+            "averageScore": 83,
+            "favourites": 4181,
+            "type": "ANIME",
+            "genres": [
+                "Action",
+                "Adventure",
+                "Drama",
+                "Fantasy",
+                "Horror",
+                "Supernatural"
+            ],
+            "startDate": {
+                "year": 1997,
+                "month": 10,
+                "day": 7
+            }
+        },
+        {
+            "title": {
+                "romaji": "Koukaku Kidoutai",
+                "english": "Ghost in the Shell",
+                "native": "攻殻機動隊"
+            },
+            "popularity": 75709,
+            "averageScore": 80,
+            "favourites": 2996,
+            "type": "ANIME",
+            "genres": [
+                "Action",
+                "Psychological",
+                "Sci-Fi"
+            ],
+            "startDate": {
+                "year": 1995,
+                "month": 11,
+                "day": 18
+            }
+        },
+        {
+            "title": {
+                "romaji": "Rurouni Kenshin: Meiji Kenkaku Romantan - Tsuioku-hen",
+                "english": "Samurai X: Trust and Betrayal",
+                "native": "るろうに剣心―明治剣客浪漫譚―追憶編"
+            },
+            "popularity": 26824,
+            "averageScore": 84,
+            "favourites": 1191,
+            "type": "ANIME",
+            "genres": [
+                "Action",
+                "Drama",
+                "Romance"
+            ],
+            "startDate": {
+                "year": 1999,
+                "month": 2,
+                "day": 20
+            }
+        },
+        {
+            "title": {
+                "romaji": "Rurouni Kenshin: Meiji Kenkaku Romantan",
+                "english": "Rurouni Kenshin",
+                "native": "るろうに剣心 -明治剣客浪漫譚-"
+            },
+            "popularity": 48076,
+            "averageScore": 79,
+            "favourites": 1423,
+            "type": "ANIME",
+            "genres": [
+                "Action",
+                "Adventure",
+                "Comedy",
+                "Romance"
+            ],
+            "startDate": {
+                "year": 1996,
+                "month": 1,
+                "day": 10
+            }
+        },
+        {
+            "title": {
+                "romaji": "Rurouni Kenshin: Meiji Kenkaku Romantan - Ishinshishi e no Requiem",
+                "english": "Samurai X: The Motion Picture",
+                "native": "るろうに剣心 -明治剣客浪漫譚- 維新志士への鎮魂歌"
+            },
+            "popularity": 4876,
+            "averageScore": 70,
+            "favourites": 28,
+            "type": "ANIME",
+            "genres": [
+                "Drama"
+            ],
+            "startDate": {
+                "year": 1997,
+                "month": 12,
+                "day": 20
+            }
+        },
+        {
+            "title": {
+                "romaji": "AKIRA",
+                "english": "Akira",
+                "native": "AKIRA"
+            },
+            "popularity": 102868,
+            "averageScore": 79,
+            "favourites": 4206,
+            "type": "ANIME",
+            "genres": [
+                "Action",
+                "Adventure",
+                "Horror",
+                "Psychological",
+                "Sci-Fi",
+                "Supernatural"
+            ],
+            "startDate": {
+                "year": 1988,
+                "month": 7,
+                "day": 16
+            }
+        },
+        {
+            "title": {
+                "romaji": ".hack//Sign",
+                "english": ".hack//Sign",
+                "native": ".hack//SIGN"
+            },
+            "popularity": 19224,
+            "averageScore": 65,
+            "favourites": 252,
+            "type": "ANIME",
+            "genres": [
+                "Adventure",
+                "Fantasy",
+                "Mystery",
+                "Sci-Fi"
+            ],
+            "startDate": {
+                "year": 2002,
+                "month": 4,
+                "day": 4
+            }
+        },
+        {
+            "title": {
+                "romaji": "Aa! Megami-sama!",
+                "english": "Oh! My Goddess",
+                "native": "ああっ女神さまっ"
+            },
+            "popularity": 5732,
+            "averageScore": 68,
+            "favourites": 64,
+            "type": "ANIME",
+            "genres": [
+                "Comedy",
+                "Drama",
+                "Romance",
+                "Supernatural"
+            ],
+            "startDate": {
+                "year": 1993,
+                "month": 2,
+                "day": 21
+            }
+        },
+        {
+            "title": {
+                "romaji": "Aa! Megami-sama! (TV)",
+                "english": "Oh! My Goddess",
+                "native": "ああっ女神さまっ"
+            },
+            "popularity": 14157,
+            "averageScore": 69,
+            "favourites": 133,
+            "type": "ANIME",
+            "genres": [
+                "Comedy",
+                "Romance",
+                "Supernatural"
+            ],
+            "startDate": {
+                "year": 2005,
+                "month": 1,
+                "day": 7
+            }
+        },
+        {
+            "title": {
+                "romaji": "Tenshi Kinryouku",
+                "english": "Angel Sanctuary",
+                "native": "天使禁猟区"
+            },
+            "popularity": 3838,
+            "averageScore": 55,
+            "favourites": 15,
+            "type": "ANIME",
+            "genres": [
+                "Action",
+                "Drama",
+                "Ecchi",
+                "Romance",
+                "Supernatural"
+            ],
+            "startDate": {
+                "year": 2000,
+                "month": 5,
+                "day": 25
+            }
+        },
+        {
+            "title": {
+                "romaji": "Kidou Tenshi Angelic Layer",
+                "english": "Angelic Layer",
+                "native": "機動天使エンジェリックレイヤー"
+            },
+            "popularity": 5988,
+            "averageScore": 68,
+            "favourites": 64,
+            "type": "ANIME",
+            "genres": [
+                "Comedy",
+                "Drama",
+                "Sci-Fi",
+                "Sports"
+            ],
+            "startDate": {
+                "year": 2001,
+                "month": 4,
+                "day": 1
+            }
+        },
+        {
+            "title": {
+                "romaji": "Ai Yori Aoshi",
+                "english": "Ai Yori Aoshi",
+                "native": "藍より青し"
+            },
+            "popularity": 9997,
+            "averageScore": 66,
+            "favourites": 66,
+            "type": "ANIME",
+            "genres": [
+                "Comedy",
+                "Drama",
+                "Romance",
+                "Slice of Life"
+            ],
+            "startDate": {
+                "year": 2002,
+                "month": 4,
+                "day": 11
+            }
+        },
+        {
+            "title": {
+                "romaji": "Appleseed (Movie)",
+                "english": null,
+                "native": "アップルシード"
+            },
+            "popularity": 6348,
+            "averageScore": 65,
+            "favourites": 41,
+            "type": "ANIME",
+            "genres": [
+                "Action",
+                "Drama",
+                "Mecha",
+                "Sci-Fi"
+            ],
+            "startDate": {
+                "year": 2004,
+                "month": 4,
+                "day": 17
+            }
+        },
+        {
+            "title": {
+                "romaji": "Arc the Lad",
+                "english": null,
+                "native": "アークザラッド"
+            },
+            "popularity": 1590,
+            "averageScore": 59,
+            "favourites": 7,
+            "type": "ANIME",
+            "genres": [
+                "Action",
+                "Adventure",
+                "Fantasy",
+                "Horror",
+                "Sci-Fi"
+            ],
+            "startDate": {
+                "year": 1999,
+                "month": 4,
+                "day": 5
+            }
+        },
+        {
+            "title": {
+                "romaji": "Avenger",
+                "english": null,
+                "native": "アヴェンジャー"
+            },
+            "popularity": 1822,
+            "averageScore": 52,
+            "favourites": 7,
+            "type": "ANIME",
+            "genres": [
+                "Adventure",
+                "Fantasy",
+                "Sci-Fi"
+            ],
+            "startDate": {
+                "year": 2003,
+                "month": 10,
+                "day": 2
+            }
+        },
+        {
+            "title": {
+                "romaji": "Beck: Mongolian Chop Squad",
+                "english": "Beck: Mongolian Chop Squad",
+                "native": "Beck: Mongolian Chop Squad"
+            },
+            "popularity": 40504,
+            "averageScore": 80,
+            "favourites": 1414,
+            "type": "ANIME",
+            "genres": [
+                "Comedy",
+                "Drama",
+                "Music",
+                "Slice of Life"
+            ],
+            "startDate": {
+                "year": 2004,
+                "month": 10,
+                "day": 7
+            }
+        },
+        {
+            "title": {
+                "romaji": "Blue Gender",
+                "english": null,
+                "native": "ブルージェンダー"
+            },
+            "popularity": 8327,
+            "averageScore": 65,
+            "favourites": 76,
+            "type": "ANIME",
+            "genres": [
+                "Adventure",
+                "Drama",
+                "Horror",
+                "Mecha",
+                "Psychological",
+                "Romance",
+                "Sci-Fi"
+            ],
+            "startDate": {
+                "year": 1999,
+                "month": 10,
+                "day": 8
+            }
+        },
+        {
+            "title": {
+                "romaji": "Chobits",
+                "english": "Chobits",
+                "native": "ちょびっツ"
+            },
+            "popularity": 45721,
+            "averageScore": 70,
+            "favourites": 760,
+            "type": "ANIME",
+            "genres": [
+                "Comedy",
+                "Drama",
+                "Ecchi",
+                "Romance",
+                "Sci-Fi"
+            ],
+            "startDate": {
+                "year": 2002,
+                "month": 4,
+                "day": 3
+            }
+        },
+        {
+            "title": {
+                "romaji": "Chrno Crusade",
+                "english": "Chrono Crusade",
+                "native": "クロノクルセイド"
+            },
+            "popularity": 19233,
+            "averageScore": 71,
+            "favourites": 224,
+            "type": "ANIME",
+            "genres": [
+                "Action",
+                "Romance",
+                "Supernatural"
+            ],
+            "startDate": {
+                "year": 2003,
+                "month": 11,
+                "day": 24
+            }
+        },
+        {
+            "title": {
+                "romaji": "D.N.Angel",
+                "english": "D.N.Angel",
+                "native": "Ｄ・Ｎ・ＡＮＧＥＬ"
+            },
+            "popularity": 13971,
+            "averageScore": 66,
+            "favourites": 141,
+            "type": "ANIME",
+            "genres": [
+                "Action",
+                "Comedy",
+                "Fantasy",
+                "Romance"
+            ],
+            "startDate": {
+                "year": 2003,
+                "month": 4,
+                "day": 3
+            }
+        },
+        {
+            "title": {
+                "romaji": "D.C.: Da Capo",
+                "english": "D.C.~Da Capo~",
+                "native": "D.C.～ダ・カーポ～"
+            },
+            "popularity": 8401,
+            "averageScore": 62,
+            "favourites": 31,
+            "type": "ANIME",
+            "genres": [
+                "Drama",
+                "Romance"
+            ],
+            "startDate": {
+                "year": 2003,
+                "month": 7,
+                "day": 5
+            }
+        },
+        {
+            "title": {
+                "romaji": "DearS",
+                "english": null,
+                "native": "ディアーズ"
+            },
+            "popularity": 13285,
+            "averageScore": 59,
+            "favourites": 79,
+            "type": "ANIME",
+            "genres": [
+                "Comedy",
+                "Ecchi",
+                "Romance",
+                "Sci-Fi"
+            ],
+            "startDate": {
+                "year": 2004,
+                "month": 7,
+                "day": 11
+            }
+        },
+        {
+            "title": {
+                "romaji": "Rozen Maiden",
+                "english": "Rozen Maiden",
+                "native": "ローゼンメイデン"
+            },
+            "popularity": 21130,
+            "averageScore": 70,
+            "favourites": 250,
+            "type": "ANIME",
+            "genres": [
+                "Action",
+                "Comedy",
+                "Drama",
+                "Supernatural"
+            ],
+            "startDate": {
+                "year": 2004,
+                "month": 10,
+                "day": 8
+            }
+        },
+        {
+            "title": {
+                "romaji": "Rozen Maiden: Träumend",
+                "english": "Rozen Maiden: Dreaming",
+                "native": "ローゼンメイデン ~ トロイメント"
+            },
+            "popularity": 10443,
+            "averageScore": 72,
+            "favourites": 83,
+            "type": "ANIME",
+            "genres": [
+                "Action",
+                "Comedy",
+                "Drama"
+            ],
+            "startDate": {
+                "year": 2005,
+                "month": 10,
+                "day": 21
+            }
+        },
+        {
+            "title": {
+                "romaji": "Azumanga Daioh",
+                "english": "Azumanga Daioh",
+                "native": "あずまんが大王"
+            },
+            "popularity": 38744,
+            "averageScore": 77,
+            "favourites": 1076,
+            "type": "ANIME",
+            "genres": [
+                "Comedy",
+                "Slice of Life"
+            ],
+            "startDate": {
+                "year": 2002,
+                "month": 4,
+                "day": 9
+            }
+        },
+        {
+            "title": {
+                "romaji": "Basilisk: Kouga Ninpouchou",
+                "english": "Basilisk: The Kouga Ninja Scrolls",
+                "native": "バジリスク 甲賀忍法帖"
+            },
+            "popularity": 17435,
+            "averageScore": 71,
+            "favourites": 205,
+            "type": "ANIME",
+            "genres": [
+                "Action",
+                "Adventure",
+                "Fantasy",
+                "Romance"
+            ],
+            "startDate": {
+                "year": 2005,
+                "month": 4,
+                "day": 13
+            }
+        },
+        {
+            "title": {
+                "romaji": "Black Cat",
+                "english": "Black Cat",
+                "native": "ブラックキャット"
+            },
+            "popularity": 24440,
+            "averageScore": 69,
+            "favourites": 288,
+            "type": "ANIME",
+            "genres": [
+                "Adventure",
+                "Comedy",
+                "Sci-Fi"
+            ],
+            "startDate": {
+                "year": 2005,
+                "month": 10,
+                "day": 6
+            }
+        }
+    ]
+}
