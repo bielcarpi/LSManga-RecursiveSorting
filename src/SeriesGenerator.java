@@ -4,6 +4,10 @@ public class SeriesGenerator {
 
     private static final int MAX_POPULARITY = 10000;
     private static final int MAX_SCORE = 100;
+    private static final String[] POSSIBLE_GENRES = {"Action", "Adventure", "Comedy", "Drama", "Sci-Fi",
+                                                     "Mystery", "Supernatural", "Romance", "Slice of Life",
+                                                     "Sports", "Horror", "Psychological", "Thriller", "Fantasy"};
+    private static final int MAX_POSSIBLE_GENRES = 3;
     private static final Random r = new Random();
 
     /**
@@ -28,5 +32,22 @@ public class SeriesGenerator {
      */
     public static String getType(){
         return r.nextBoolean()? "MANGA": "ANIME";
+    }
+
+    /**
+     * This method generates a random Genres array for a Series.
+     * @return Random Genres array for a Series
+     */
+    public static String[] getGenres(){
+        int numGenres = r.nextInt(MAX_POSSIBLE_GENRES + 1);
+        String[] genres = new String[numGenres];
+
+        for(int i = 0; i < genres.length; i++){
+            int randomGenre = r.nextInt(POSSIBLE_GENRES.length - 1);
+            genres[i] = POSSIBLE_GENRES[randomGenre];
+            //We don't check for repeated genres. It could happen. It's for performance reasons.
+        }
+
+        return genres;
     }
 }
