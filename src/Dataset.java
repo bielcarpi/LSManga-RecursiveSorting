@@ -1,7 +1,6 @@
 /**
- * There will be 7 different datasets we can read:
+ * There will be 6 different datasets we can read:
  * <ul>
- *     <li>XS</li>
  *     <li>S</li>
  *     <li>M</li>
  *     <li>L</li>
