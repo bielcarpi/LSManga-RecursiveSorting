@@ -20,4 +20,13 @@ public class SeriesGenerator {
     public static int[] getAudience(){
         return new int[]{r.nextInt(MAX_POPULARITY + 1), r.nextInt(MAX_SCORE + 1), r.nextInt(popularity + 1)};
     }
+
+    /**
+     * This method generates a non-real type for a Series.
+     * <p>Possible values can be either MANGA or ANIME
+     * @return The Type of non-real Series
+     */
+    public static String getType(){
+        return r.nextBoolean()? "MANGA": "ANIME";
+    }
 }
