@@ -25,10 +25,9 @@ public class SortUtility {
      * @return the array provided, but ordered
      */
     public static <T> T[] mergeSort(T[] array, Comparator<T> comparator){
-        //Trivial case --> If length of the array == 0, then the array is already sorted
-        if(array.length == 1){
+        //Trivial case --> If length of the array == 1, then the array is already sorted
+        if(array.length == 1)
             return array;
-        }
 
         //Non-Trivial case --> if length != 0
         int mid = array.length/2; //Calculate middle position of the array
@@ -89,14 +88,38 @@ public class SortUtility {
 
     /**
      * Orders (using quicksort) an array of {@code T Objects} given a {@link Comparator<T>} for that same {@code object}
-     * <p>The array passed as parameter won't be modified. The one ordered will be returned
+     * <p>The array passed as parameter will be the one modified (by reference). If you don't want this behavior,
+     *   be sure to pass a copy of the original array
      *
      * @see <a href="https://en.wikipedia.org/wiki/Quicksort">Quicksort</a>
      *
      * @param array The array that wants to be ordered
      * @param comparator The criteria that will order the array
-     * @return the array provided, but ordered
      */
-    public static <T> T[] quickSort(T[] array, Comparator<T> comparator){
+    public static <T> void quickSort(T[] array, Comparator<T> comparator){
+        //This method is a facade, let's invoke the real quickSort
+        quickSortImplementation(array, comparator, 0, array.length-1);
+    }
+
+    private static <T> void quickSortImplementation(T[] array, Comparator<T> comparator, int i, int j){
+        //Remind that i = the right index of the array & j = the left index of the array.
+        //The array is always full, but we want only to modify it from i to j (j included)
+
+        //Trivial Case --> If i >= j, return (it means that the portion of the array we want to modify
+        //  is length 1. In this case it is already ordered, so return)
+        if(i >= j)
+            return;
+
+        //Non-Trivial Case --> If the portion of the array we want to modify isn't length 1
+        int pivotIndex = partition(array, comparator, i ,j); //Select a pivot. After this function ends, the pivot
+        //  has to be in its correct place inside the array. All elements bigger on its left, all elements smaller
+        //  on its right.
+        quickSortImplementation(array, comparator, i, pivotIndex); //Perform a quicksort with the array from i to pivotIndex
+        quickSortImplementation(array, comparator, pivotIndex + 1, j); //Perform a quicksort with the array from pivotIndex+1 to j
+    }
+
+    private static <T> int partition(T[] array, Comparator<T> comparator, int i, int j){
+
+
     }
 }
