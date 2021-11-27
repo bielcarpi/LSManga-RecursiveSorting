@@ -98,6 +98,15 @@ public class Series {
         if(!type.equals("MANGA") && !type.equals("ANIME")) type = null;
     }
 
+    /**
+     * Returns the popularity (number of people that have seen this Series)
+     * @return Number of people that have seen this Series
+     */
+    public int getPopularity(){
+        return popularity;
+    }
+
+
     @Override
     public String toString() {
         return "Series{" +
