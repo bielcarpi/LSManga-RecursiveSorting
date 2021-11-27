@@ -37,8 +37,8 @@ public class SortUtility {
         T[] leftPart = Arrays.copyOfRange(array, 0, mid);
         T[] rightPart = Arrays.copyOfRange(array, mid, array.length);
 
-        mergeSort(leftPart, comparator); //MergeSort the left part of the current array
-        mergeSort(rightPart, comparator); //Merge sort the right part of the current array
+        leftPart = mergeSort(leftPart, comparator); //MergeSort the left part of the current array
+        rightPart = mergeSort(rightPart, comparator); //Merge sort the right part of the current array
         return merge(leftPart, rightPart, comparator); // Merge both left and right parts, in order to get an ordered array
     }
 
@@ -52,14 +52,14 @@ public class SortUtility {
         int i = 0; //Index of the arrayOrdered
         int l = 0, r = 0; //leftPart and rightPart cursors
 
-        while(l <= leftPart.length && r <= rightPart.length){ //While the left and right cursors aren't on its end
+        while(l < leftPart.length || r < rightPart.length){ //While the left and right cursors aren't on its end
 
-            if(l > leftPart.length){ //If the whole left part is already on the arrayOrdered
+            if(l == leftPart.length){ //If the whole left part is already on the arrayOrdered
                 //Then let's add the next element of the right array
                 arrayOrdered[i] = rightPart[r];
                 r++;
             }
-            else if(r > rightPart.length){ //If the whole right part is already on the arrayOrdered
+            else if(r == rightPart.length){ //If the whole right part is already on the arrayOrdered
                 //Then let's add the next element of the left array
                 arrayOrdered[i] = leftPart[l];
                 l++;
@@ -71,6 +71,10 @@ public class SortUtility {
             else if(comparator.compare(leftPart[l], rightPart[r]) < 0){ //If rightPart is bigger than leftPart
                 arrayOrdered[i] = rightPart[r];
                 r++;
+            }
+            else if(comparator.compare(leftPart[l], rightPart[r]) == 0){ //If rightPart and leftPart are equal, copy leftPart
+                arrayOrdered[i] = leftPart[l];
+                l++;
             }
 
             //Increment i
