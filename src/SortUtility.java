@@ -35,7 +35,7 @@ public class SortUtility {
 
         //Split the current array in two parts: left and right
         T[] leftPart = Arrays.copyOfRange(array, 0, mid);
-        T[] rightPart = Arrays.copyOfRange(array, mid+1, array.length);
+        T[] rightPart = Arrays.copyOfRange(array, mid, array.length);
 
         mergeSort(leftPart, comparator); //MergeSort the left part of the current array
         mergeSort(rightPart, comparator); //Merge sort the right part of the current array
