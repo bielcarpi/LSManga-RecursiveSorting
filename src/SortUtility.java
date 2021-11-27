@@ -119,7 +119,56 @@ public class SortUtility {
     }
 
     private static <T> int partition(T[] array, Comparator<T> comparator, int i, int j){
+        //i is our leftCursor
+        //j is our rightCursor
+        //The objective of this method is to select a pivot (object in the array) and, on the end, the pivot has to be in its correct place
+        //  inside the array. That means: all elements bigger of the pivot on its left, all elements smaller on its right.
+        int pivotIndex = (i + j)/2; //Our pivot in this particular implementation will be the center element of the range of the array we're dealing with
+        T pivot = array[pivotIndex];
+        swap(array, j, pivotIndex); //Move the pivot to the last position of the array
+        pivotIndex = j; //Save new pivotIndex
+        j--; //And decrease a position from the left
+
+        //There can be a special case when we decrease j. In a 2 position array, i == j after decreasing. We'll handle this situation on this conditional
+        if(i == j){
+            if(comparator.compare(array[i], pivot) < 0) { //If the element with position i is less than the pivot, swap
+                swap(array, i, pivotIndex); //Now the array is ordered
+                return i; //Return the position of the pivot
+            }
+            else return pivotIndex; //If the element with position i is bigger than the pivot, return the pivotIndex (the array is ordered)
+        }
 
 
+        while(true){ //Infinite loop. It will break when i <= j. We break this way as inside the loop we'll need to check again whether i <= j
+
+            while(comparator.compare(array[i], pivot) > 0) //While the element on the left is bigger than the pivot, increase the leftCursor (i)
+                i++;
+
+            //While the element on the right is smaller than the pivot (that's what we want), decrease rightCursor (j)
+            while(comparator.compare(array[j], pivot) < 0)
+                j--;
+
+            //If the leftCursor is bigger than the rightCursor stop, we're done.
+            if(i <= j) break;
+
+            //If not, it means that we've found two values that need to be swapped (as we have a value on the right of the pivot that's bigger than
+            //  it, and a value on the left of the pivot that's smaller than it)
+            swap(array, i, j);
+
+            //As we've swapped, move a position both in j and i
+            j--;
+            i++;
+        }
+
+        swap(array, i, pivotIndex); //Return the pivot to the position it should be
+        return i; //Return the position of our pivot
     }
+
+    private static <T> void swap(T[] array, int pos1, int pos2){
+        //This method swaps pos1 and pos2 of the array. pos1 will become pos2, and vice versa.
+        T aux = array[pos1];
+        array[pos1] = array[pos2]; //pos1 is pos2
+        array[pos2] = aux; //pos2 is pos1
+    }
+
 }
