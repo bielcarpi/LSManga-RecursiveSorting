@@ -43,11 +43,39 @@ public class SortUtility {
     }
 
     private static <T> T[] merge(T[] leftPart, T[] rightPart, Comparator<T> comparator){
+        //We need to merge both left and right parts ordered in the arrayOrdered.
+        //We know both leftPart and rightPart arrays are ordered! We only need to merge them
+
         //Create new array of T[], that will contain the ordered elements in leftPart + rightPart
         @SuppressWarnings("unchecked")
         T[] arrayOrdered = (T[]) Array.newInstance(leftPart.getClass().getComponentType(), leftPart.length + rightPart.length);
+        int i = 0; //Index of the arrayOrdered
+        int l = 0, r = 0; //leftPart and rightPart cursors
 
+        while(l <= leftPart.length && r <= rightPart.length){ //While the left and right cursors aren't on its end
 
+            if(l > leftPart.length){ //If the whole left part is already on the arrayOrdered
+                //Then let's add the next element of the right array
+                arrayOrdered[i] = rightPart[r];
+                r++;
+            }
+            else if(r > rightPart.length){ //If the whole right part is already on the arrayOrdered
+                //Then let's add the next element of the left array
+                arrayOrdered[i] = leftPart[l];
+                l++;
+            }
+            else if(comparator.compare(leftPart[l], rightPart[r]) > 0){ //If leftPart is bigger than rightPart
+                arrayOrdered[i] = leftPart[l];
+                l++;
+            }
+            else if(comparator.compare(leftPart[l], rightPart[r]) < 0){ //If rightPart is bigger than leftPart
+                arrayOrdered[i] = rightPart[r];
+                r++;
+            }
+
+            //Increment i
+            i++;
+        }
 
         return arrayOrdered;
     }
