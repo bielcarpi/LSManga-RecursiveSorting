@@ -150,6 +150,20 @@ public class SeriesManager {
     }
 
     /**
+     * Orders the current dataset loaded with Quicksort
+     */
+    public void orderLoadedDatasetWithQuicksort(){
+        System.out.println("Ordering dataset of size " + series.length + " with Quicksort...");
+        long startTime = System.nanoTime();
+        SortUtility.quickSort(series, new PopularityComparator());
+        long endTime = System.nanoTime();
+
+        System.out.println("Done! " + series.length + " elements ordered in " +
+                new DecimalFormat("#.##").format(((endTime-startTime)/1000000000.0)) + " seconds.");
+    }
+
+
+    /**
      * Prints on {@code stdin} all the Series currently loaded
      */
     public void printSeriesLoaded(){
@@ -163,5 +177,6 @@ public class SeriesManager {
             return Integer.compare(s1.getPopularity(), s2.getPopularity());
         }
     }
+
 
 }
