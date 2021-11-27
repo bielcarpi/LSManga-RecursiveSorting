@@ -9,7 +9,8 @@ public class Main {
 
     public static void main(String[] args){
         SeriesManager seriesManager = SeriesManager.getSeriesManager();
-        seriesManager.generateDataset(Dataset.S);
+        seriesManager.loadDataset(Dataset.S);
+        seriesManager.orderLoadedDatasetWithMergeSort();
     }
 
 }

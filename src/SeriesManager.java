@@ -3,6 +3,8 @@ import com.google.gson.GsonBuilder;
 import com.google.gson.JsonSyntaxException;
 
 import java.io.*;
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
 import java.util.Comparator;
 
 /**
@@ -101,6 +103,17 @@ public class SeriesManager {
             System.err.println("Error. The dataset " + ds.name() + " has been generated (it is loaded) but can't be written.");
             e.printStackTrace();
         }
+    }
+
+
+    public void orderLoadedDatasetWithMergeSort(){
+        System.out.println("Ordering dataset of size " + series.length + " with Merge Sort...");
+        long startTime = System.nanoTime();
+        SortUtility.mergeSort(series, new PopularityComparator());
+        long endTime = System.nanoTime();
+
+        System.out.println("Done! " + series.length + " elements ordered in " +
+                new DecimalFormat("#.##").format(((endTime-startTime)/1000000000.0)) + " seconds.");
     }
 
 
