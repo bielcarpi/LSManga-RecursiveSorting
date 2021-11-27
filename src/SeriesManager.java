@@ -142,13 +142,20 @@ public class SeriesManager {
     public void orderLoadedDatasetWithMergeSort(){
         System.out.println("Ordering dataset of size " + series.length + " with Merge Sort...");
         long startTime = System.nanoTime();
-        SortUtility.mergeSort(series, new PopularityComparator());
+        series = SortUtility.mergeSort(series, new PopularityComparator());
         long endTime = System.nanoTime();
 
         System.out.println("Done! " + series.length + " elements ordered in " +
                 new DecimalFormat("#.##").format(((endTime-startTime)/1000000000.0)) + " seconds.");
     }
 
+    /**
+     * Prints on {@code stdin} all the Series currently loaded
+     */
+    public void printSeriesLoaded(){
+        for(int i = 0; i< series.length; i++)
+            System.out.println(i + " -> " + series[i].toString());
+    }
 
     private static class PopularityComparator implements Comparator<Series> {
         @Override

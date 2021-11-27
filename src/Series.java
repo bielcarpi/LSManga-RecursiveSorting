@@ -110,13 +110,13 @@ public class Series {
     @Override
     public String toString() {
         return "Series{" +
-                "title=" + title.englishTitle +
+                "englishTitle=" + title.englishTitle +
                 ", popularity=" + popularity +
                 ", averageScore=" + averageScore +
                 ", favourites=" + favourites +
                 ", type='" + type + '\'' +
                 ", genres=" + Arrays.toString(genres) +
-                ", startDate=" + startDate.day + startDate.month + startDate.year +
+                ", startDate=" + startDate.day + "/" + startDate.month + "/" + startDate.year +
                 '}';
     }
 }

@@ -11,6 +11,7 @@ public class Main {
         SeriesManager seriesManager = SeriesManager.getSeriesManager();
         seriesManager.loadDataset(Dataset.S);
         seriesManager.orderLoadedDatasetWithMergeSort();
+        seriesManager.printSeriesLoaded();
     }
 
 }
