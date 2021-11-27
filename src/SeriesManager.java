@@ -3,6 +3,7 @@ import com.google.gson.GsonBuilder;
 import com.google.gson.JsonSyntaxException;
 
 import java.io.*;
+import java.util.Comparator;
 
 /**
  * The {@code SeriesManager} class will be able to read/write series from/to files and perform operations with them
@@ -99,6 +100,14 @@ public class SeriesManager {
         }catch(IOException e){
             System.err.println("Error. The dataset " + ds.name() + " has been generated (it is loaded) but can't be written.");
             e.printStackTrace();
+        }
+    }
+
+
+    private static class PopularityComparator implements Comparator<Series> {
+        @Override
+        public int compare(Series s1, Series s2) {
+            return Integer.compare(s1.getPopularity(), s2.getPopularity());
         }
     }
 
