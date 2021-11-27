@@ -83,4 +83,20 @@ public class SortUtility {
 
         return arrayOrdered;
     }
+
+
+
+
+    /**
+     * Orders (using quicksort) an array of {@code T Objects} given a {@link Comparator<T>} for that same {@code object}
+     * <p>The array passed as parameter won't be modified. The one ordered will be returned
+     *
+     * @see <a href="https://en.wikipedia.org/wiki/Quicksort">Quicksort</a>
+     *
+     * @param array The array that wants to be ordered
+     * @param comparator The criteria that will order the array
+     * @return the array provided, but ordered
+     */
+    public static <T> T[] quickSort(T[] array, Comparator<T> comparator){
+    }
 }
