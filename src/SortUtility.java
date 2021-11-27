@@ -10,7 +10,7 @@ import java.util.Comparator;
  * @author bielcarpi
  * @version 1.0
  */
-public class SortUtility<T> {
+public class SortUtility {
 
     /**
      * Orders (using merge sort) an array of {@code T Objects} given a {@link Comparator<T>} for that same {@code object}
@@ -20,6 +20,6 @@ public class SortUtility<T> {
      * @param array The array that will be ordered
      * @param comparator The criteria that will order the array
      */
-    public void mergeSort(T[] array, Comparator<T> comparator){
+    public static <T> void mergeSort(T[] array, Comparator<T> comparator){
     }
 }
