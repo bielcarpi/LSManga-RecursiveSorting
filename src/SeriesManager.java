@@ -106,6 +106,39 @@ public class SeriesManager {
     }
 
 
+    /**
+     * Writes a file with the current loaded Dataset
+     * <p>If the file already exists, its contents will be deleted
+     *
+     * @see Dataset
+     */
+    public void writeCurrentDataset(){
+        //Let's find what dataset we have currently loaded
+        Dataset currentDataset = Dataset.L; //If none matches, by default we'll write to the L dataset
+        for(Dataset d: Dataset.values())
+            if(d.numElements == series.length) currentDataset = d;
+
+        //Write all series on a file
+        try{
+            SeriesObject seriesObject = new SeriesObject();
+            seriesObject.series = series;
+
+            BufferedWriter bw = new BufferedWriter(new FileWriter(currentDataset.path));
+            Gson gson = new GsonBuilder().setPrettyPrinting().create(); //We want the gson.toJson() method to give us a beautified JSON
+
+            bw.write(gson.toJson(seriesObject));
+            bw.close();
+
+        }catch(IOException e){
+            System.err.println("Error. The dataset " + currentDataset.name() + " can't be written");
+            e.printStackTrace();
+        }
+    }
+
+
+    /**
+     * Orders the current dataset loaded with Merge Sort
+     */
     public void orderLoadedDatasetWithMergeSort(){
         System.out.println("Ordering dataset of size " + series.length + " with Merge Sort...");
         long startTime = System.nanoTime();
