@@ -243,8 +243,8 @@ public class SortUtility {
         ArrayList<Integer> secondBucket = new ArrayList<>();
 
         for(int i = 0; i < array.size(); i++){
-            if(array.get(i) <= midNum) firstBucket.add(array.get(i)); //Add number to the first bucket if it's less or equal than midNum
-            else if(array.get(i) > midNum) secondBucket.add(array.get(i)); //Add number to the second bucket if it's greater than midNum
+            if(array.get(i) >= midNum) firstBucket.add(array.get(i)); //Add number to the first bucket if it's less or equal than midNum
+            else if(array.get(i) < midNum) secondBucket.add(array.get(i)); //Add number to the second bucket if it's greater than midNum
         }
 
         ArrayList<Integer> firstBucketOrdered = bucketSortImplementation(firstBucket);
