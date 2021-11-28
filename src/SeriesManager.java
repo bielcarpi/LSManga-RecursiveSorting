@@ -6,6 +6,7 @@ import java.io.*;
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Comparator;
 
 /**
@@ -161,29 +162,29 @@ public class SeriesManager {
      */
     public void orderLoadedDataset(SeriesComparator comparator, SortUtility.SortType sortType){
         System.out.println("Ordering dataset of size " + series.length + " with " + sortType.name() + "...");
+        long startTime, endTime; //So as to track time
 
         //Special case in Bucket Sort (as the algorithm can't user a comparator)
         if(sortType == SortUtility.SortType.BUCKET_SORT){
-            if(comparator == SeriesComparator.BY_PREMIERE_DATE){
-                System.out.println("Error. Bucket Sort can't be used to order elements by premiere date yet.");
+            if(comparator == SeriesComparator.BY_PREMIERE_DATE || comparator == SeriesComparator.BY_TOTAL_SCORE){
+                System.out.println("Error. Bucket Sort can (at this moment) be used only for sorting by Popularity");
                 return;
             }
-            else if(comparator == SeriesComparator.BY_POPULARITY){
-                ArrayList<Integer> popularityArrayList = new ArrayList<>();
-                for(Series s: series) popularityArrayList.add(s.getPopularity());
-                ArrayList<Integer> popularityArrayListOrdered = SortUtility.bucketSort(popularityArrayList);
-                for(Integer i: popularityArrayListOrdered) System.out.println(i);
+
+            startTime = System.nanoTime();
+            ArrayList<Series> seriesOrdered = SortUtility.bucketSort(new ArrayList<>(Arrays.asList(series)));
+            seriesOrdered.toArray(series); //Convert the arrayList to normal array, writing the attribute series
+            endTime = System.nanoTime();
+        }
+        else{
+            startTime = System.nanoTime();
+            switch (sortType) {
+                case MERGE_SORT -> series = SortUtility.mergeSort(series, comparator.getComparator());
+                case QUICKSORT -> SortUtility.quickSort(series, comparator.getComparator());
             }
-
+            endTime = System.nanoTime();
 
         }
-
-        long startTime = System.nanoTime();
-        switch (sortType) {
-            case MERGE_SORT -> series = SortUtility.mergeSort(series, comparator.getComparator());
-            case QUICKSORT -> SortUtility.quickSort(series, comparator.getComparator());
-        }
-        long endTime = System.nanoTime();
 
         System.out.println("Done! " + series.length + " elements ordered in " +
                 new DecimalFormat("#.##").format(((endTime-startTime)/1000000000.0)) + " seconds.");
