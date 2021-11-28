@@ -22,6 +22,9 @@ public class Series {
     private String[] genres;
     private SeriesStartDate startDate;
 
+    private transient int totalScore;
+
+
     /**
      * SeriesTitle Class.
      * Will be used for saving the different titles of a Series
@@ -71,6 +74,7 @@ public class Series {
         startDate = new SeriesStartDate(yearMonthDate[0], yearMonthDate[1], yearMonthDate[2]);
 
         sanitize();
+        totalScore = (int)(0.4*popularity + 0.2*favourites + 0.4*averageScore);
     }
 
 
@@ -95,6 +99,7 @@ public class Series {
         if(popularity < 0) popularity = 0;
         if(averageScore < 0) averageScore = 0;
         if(favourites < 0) favourites = 0;
+        if(favourites > popularity) favourites = popularity;
         if(!type.equals("MANGA") && !type.equals("ANIME")) type = null;
     }
 
