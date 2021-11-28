@@ -119,49 +119,62 @@ public class SortUtility {
     }
 
     private static <T> int partition(T[] array, Comparator<T> comparator, int i, int j){
-        //i is our leftCursor
-        //j is our rightCursor
+        if(i >= j) return -1; //i can't be bigger or equal than j. If it's the case, return error.
+
+        int l = i; //l is our leftCursor, starting from i
+        int r = j - 1; //j is our rightCursor, starting from j-1(as j will be the position where we'll put the pivot)
         //The objective of this method is to select a pivot (object in the array) and, on the end, the pivot has to be in its correct place
         //  inside the array. That means: all elements bigger of the pivot on its left, all elements smaller on its right.
-        int pivotIndex = (i + j)/2; //Our pivot in this particular implementation will be the center element of the range of the array we're dealing with
-        T pivot = array[pivotIndex];
-        swap(array, j, pivotIndex); //Move the pivot to the last position of the array
-        pivotIndex = j; //Save new pivotIndex
-        j--; //And decrease a position from the left
 
-        //There can be a special case when we decrease j. In a 2 position array, i == j after decreasing. We'll handle this situation on this conditional
-        if(i == j){
-            if(comparator.compare(array[i], pivot) < 0) { //If the element with position i is less than the pivot, swap
-                swap(array, i, pivotIndex); //Now the array is ordered
-                return i; //Return the position of the pivot
+        int pivotIndex = (i+j)/2;
+        T pivot = array[pivotIndex]; //Our pivot in this particular implementation will be the center element of the range of the array we're dealing with
+        swap(array, j, pivotIndex); //Move the pivot to the last position of the array (j)
+        //Before the method ends, we'll swap the rightCursor element with our pivot
+        //  as the rightCursor element will be the last element that's smaller than our pivot
+        //  when we end the algorithm.
+
+        //There can be a special case when we decrease j. In a 2 position array, i == j after decreasing.
+        //The process implemented won't work on this case, so we'll handle length 2 arrays on this conditional
+        if(r == l){
+            if(comparator.compare(array[l], pivot) < 0) { //If the element with position l is less than the pivot, swap
+                swap(array, l, j); //Swap pivot with l. Now the array is ordered
+                return l; //Return the position of the pivot
             }
-            else return pivotIndex; //If the element with position i is bigger than the pivot, return the pivotIndex (the array is ordered)
+            else return r; //If the element with position l is bigger than the pivot, return the pivotIndex (the array is ordered)
         }
 
 
-        while(true){ //Infinite loop. It will break when i <= j. We break this way as inside the loop we'll need to check again whether i <= j
+        //Infinite loop. It will break when i<=j, but first we need to move our cursors to its
+        //  correct position. In order to achieve this, we'll put the breaking conditional just
+        //  before moving the cursors.
+        while(true){
 
-            while(comparator.compare(array[i], pivot) > 0) //While the element on the left is bigger than the pivot, increase the leftCursor (i)
-                i++;
+            //While the element on the left is bigger than the pivot (that's what we want), increase the leftCursor (i)
+            //We'll also check that the cursorLeft isn't getting out of bounds
+            while(l < j-1 && comparator.compare(array[l], pivot) > 0)
+                l++;
 
             //While the element on the right is smaller than the pivot (that's what we want), decrease rightCursor (j)
-            while(comparator.compare(array[j], pivot) < 0)
-                j--;
+            //We'll also check that the cursorRight isn't getting out of bounds
+            while(r > i && comparator.compare(array[r], pivot) < 0)
+                r--;
 
-            //If the leftCursor is bigger than the rightCursor stop, we're done.
-            if(i <= j) break;
+            //If the leftCursor is bigger than the rightCursor (they'll never be equal) stop, we're done.
+            if(l >= r) break;
 
-            //If not, it means that we've found two values that need to be swapped (as we have a value on the right of the pivot that's bigger than
+            //If not, it means that we've found two values that need to be swapped
+            //  (as we have a value on the right of the pivot that's bigger than
             //  it, and a value on the left of the pivot that's smaller than it)
-            swap(array, i, j);
+            swap(array, l, r);
 
             //As we've swapped, move a position both in j and i
-            j--;
-            i++;
+            l++;
+            r--;
         }
 
-        swap(array, i, pivotIndex); //Return the pivot to the position it should be
-        return i; //Return the position of our pivot
+
+        swap(array, l, j); //As explained before, move the pivot (stored in j) to the position it should be
+        return l; //Return the position of our pivot
     }
 
     private static <T> void swap(T[] array, int pos1, int pos2){
