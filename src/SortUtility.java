@@ -198,18 +198,18 @@ public class SortUtility {
 
 
     /**
-     * Orders (using Recursive Bucket Sort) an array of {@code Integers} from bigger to smaller
+     * Orders (using Recursive Bucket Sort) an array of {@code Series} from bigger popularity to smaller popularity
      * <p>The array passed as parameter won't be modified. The ordered one will be returned.
+     * <p><b> Asdf
      *
      * @see <a href="https://en.wikipedia.org/wiki/Bucket_sort">Bucket Sort</a>
-     *
      * @param array The array that wants to be ordered
      */
-    public static ArrayList<Integer> bucketSort(ArrayList<Integer> array){
+    public static ArrayList<Series> bucketSort(ArrayList<Series> array){
         //Custom bucket sort -->
         //  We'll split the original array on two buckets each time.
-        //  In one bucket, we'll put the values from smallerNum to (biggerNum/2)
-        //  In the other bucket, we'll put the values from (biggerNum/2 + 1) to biggerNum
+        //  In one bucket, we'll put the values from biggerNum to midNum+1
+        //  In the other bucket, we'll put the values from midNum to smallerNum
         //  We'll do this process recursively, until the array passed is of length <= 2. In
         //  this case, we'll order them (simple comparison of which one is bigger) and return
         //  it ordered. The different arrays will get merged.
@@ -218,11 +218,11 @@ public class SortUtility {
         return bucketSortImplementation(array);
     }
 
-    private static ArrayList<Integer> bucketSortImplementation(ArrayList<Integer> array){
+    private static ArrayList<Series> bucketSortImplementation(ArrayList<Series> array){
         //Trivial case --> If array length is >= 2, order it and return it
         if(array.size() == 2){ //If its size is 2, we need to order it before returning it
             //If the second position is bigger than the first position, swap them (we want them ordered from big to small)
-            if(array.get(1) > array.get(0)) Collections.swap(array, 1, 0);
+            if(array.get(1).getPopularity() > array.get(0).getPopularity()) Collections.swap(array, 1, 0);
             return array;
         }
         else if(array.size() < 2){ //If it's less than size 2, it's already ordered
@@ -234,24 +234,44 @@ public class SortUtility {
         int minNum = Integer.MAX_VALUE;
         int maxNum = Integer.MIN_VALUE;
         for(int i = 0; i < array.size(); i++){
-            if(array.get(i) < minNum) minNum = array.get(i); //If minT is bigger than array[i], array[i] is our new smaller
-            if(array.get(i) > maxNum) maxNum = array.get(i); //If array[i] is bigger than maxT, array[i] is our new bigger
+            if(array.get(i).getPopularity() < minNum) minNum = array.get(i).getPopularity(); //If minT is bigger than array[i], array[i] is our new smaller
+            if(array.get(i).getPopularity() > maxNum) maxNum = array.get(i).getPopularity(); //If array[i] is bigger than maxT, array[i] is our new bigger
+        }
+
+        //We have a special case when minNum+2 is bigger than maxNum. We need at least a minimum, mid and maximum value that aren't equal
+        //  for the algorithm to work. In this case (the offset of the elements is either 0 or 1, and we'll
+        //  order them in this conditional.
+        if(minNum + 1 >= maxNum){
+            if(minNum == maxNum) return array; //If both min and maxNum are equal, the array is already sorted
+
+            //If not, let's push all the minNum elements to the end of the array (we're sorting from big to small)
+            for(int i = 0, k = 0; i < array.size() - k; i++){ //K is an aux to keep track of the values we remove from the array
+                Series currentValue = array.get(i);
+                if(currentValue.getPopularity() == minNum){ //If currentValue is the minimum value, push it to the end of the array
+                    array.remove(i);
+                    array.add(currentValue);
+                    k++;
+                    i--;
+                }
+            }
+            return array;
         }
 
         int midNum = (maxNum+minNum)/2;
-        ArrayList<Integer> firstBucket = new ArrayList<>();
-        ArrayList<Integer> secondBucket = new ArrayList<>();
+
+        ArrayList<Series> firstBucket = new ArrayList<>();
+        ArrayList<Series> secondBucket = new ArrayList<>();
 
         for(int i = 0; i < array.size(); i++){
-            if(array.get(i) >= midNum) firstBucket.add(array.get(i)); //Add number to the first bucket if it's less or equal than midNum
-            else if(array.get(i) < midNum) secondBucket.add(array.get(i)); //Add number to the second bucket if it's greater than midNum
+            if(array.get(i).getPopularity() > midNum) firstBucket.add(array.get(i)); //Add number to the first bucket if it's greater or equal than midNum
+            else if(array.get(i).getPopularity() <= midNum) secondBucket.add(array.get(i)); //Add number to the second bucket if it's less than midNum
         }
 
-        ArrayList<Integer> firstBucketOrdered = bucketSortImplementation(firstBucket);
-        ArrayList<Integer> secondBucketOrdered = bucketSortImplementation(secondBucket);
+        firstBucket = bucketSortImplementation(firstBucket);
+        secondBucket = bucketSortImplementation(secondBucket);
 
-        firstBucketOrdered.addAll(secondBucketOrdered); //Merge secondBucketOrdered into firstBucketOrdered
-        return firstBucketOrdered; //Return both buckets ordered
+        firstBucket.addAll(secondBucket); //Merge secondBucketOrdered into firstBucketOrdered
+        return firstBucket; //Return both buckets ordered
     }
 
 }
