@@ -199,7 +199,7 @@ public class SeriesManager {
     private static class PremiereDateComparator implements Comparator<Series> {
         @Override
         public int compare(Series s1, Series s2){
-            return s1.getPremiereDate().compareTo(s2.getPremiereDate());
+            return s2.getPremiereDate().compareTo(s1.getPremiereDate());
         }
     }
 
