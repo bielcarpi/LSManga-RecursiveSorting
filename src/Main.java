@@ -9,9 +9,9 @@ public class Main {
 
     public static void main(String[] args){
         SeriesManager seriesManager = SeriesManager.getSeriesManager();
-        seriesManager.loadDataset(Dataset.S);
-        seriesManager.orderLoadedDataset(SeriesManager.SeriesComparator.BY_PREMIERE_DATE, SortUtility.SortType.QUICKSORT);
-        seriesManager.printSeriesLoaded();
+        seriesManager.generateDataset(Dataset.XXXXL);
+        seriesManager.orderLoadedDataset(SeriesManager.SeriesComparator.BY_POPULARITY, SortUtility.SortType.QUICKSORT);
+        //seriesManager.printSeriesLoaded();
     }
 
 }

@@ -61,7 +61,7 @@ public class SeriesManager {
             SeriesObject seriesObject = gson.fromJson(br, SeriesObject.class);
             this.series = seriesObject.series;
 
-            //Sanitize all series (just in case)
+            //Sanitize all series
             for(Series serie: series)
                 serie.sanitize();
 
@@ -96,6 +96,8 @@ public class SeriesManager {
      */
     public void generateDataset(Dataset ds){
         series = new Series[ds.numElements];
+        System.out.println("Generating a new dataset of size " + ds.numElements + "...");
+        System.out.println();
 
         //Create all new Series to fill the series array
         for(int i = 0; i < series.length; i++)
@@ -157,8 +159,7 @@ public class SeriesManager {
      * @see SortUtility.SortType
      */
     public void orderLoadedDataset(SeriesComparator comparator, SortUtility.SortType sortType){
-        System.out.println("Ordering dataset of size " + series.length + " with " + sortType.name());
-        System.out.println("..." + series.length + " with " + sortType.name());
+        System.out.println("Ordering dataset of size " + series.length + " with " + sortType.name() + "...");
 
         long startTime = System.nanoTime();
         switch (sortType) {
