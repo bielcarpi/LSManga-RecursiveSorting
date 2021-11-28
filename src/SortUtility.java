@@ -111,7 +111,7 @@ public class SortUtility {
             return;
 
         //Non-Trivial Case --> If the portion of the array we want to modify isn't length 1
-        int pivotIndex = partition(array, comparator, i ,j); //Select a pivot. After this function ends, the pivot
+        int pivotIndex = partition(array, comparator, i , j); //Select a pivot. After this function ends, the pivot
         //  has to be in its correct place inside the array. All elements bigger on its left, all elements smaller
         //  on its right.
         quickSortImplementation(array, comparator, i, pivotIndex); //Perform a quicksort with the array from i to pivotIndex
@@ -140,7 +140,7 @@ public class SortUtility {
                 swap(array, l, j); //Swap pivot with l. Now the array is ordered
                 return l; //Return the position of the pivot
             }
-            else return r; //If the element with position l is bigger than the pivot, return the pivotIndex (the array is ordered)
+            else return j; //If the element with position l is bigger than the pivot, return the pivotIndex (the array is ordered)
         }
 
 
@@ -151,7 +151,7 @@ public class SortUtility {
 
             //While the element on the left is bigger than the pivot (that's what we want), increase the leftCursor (i)
             //We'll also check that the cursorLeft isn't getting out of bounds
-            while(l < j-1 && comparator.compare(array[l], pivot) > 0)
+            while(l < j && comparator.compare(array[l], pivot) > 0)
                 l++;
 
             //While the element on the right is smaller than the pivot (that's what we want), decrease rightCursor (j)
@@ -178,6 +178,8 @@ public class SortUtility {
     }
 
     private static <T> void swap(T[] array, int pos1, int pos2){
+        if(pos1 == pos2) return;
+
         //This method swaps pos1 and pos2 of the array. pos1 will become pos2, and vice versa.
         T aux = array[pos1];
         array[pos1] = array[pos2]; //pos1 is pos2
