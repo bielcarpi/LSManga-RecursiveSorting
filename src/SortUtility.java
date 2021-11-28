@@ -120,7 +120,7 @@ public class SortUtility {
         int pivotIndex = partition(array, comparator, i , j); //Select a pivot. After this function ends, the pivot
         //  has to be in its correct place inside the array. All elements bigger on its left, all elements smaller
         //  on its right.
-        quickSortImplementation(array, comparator, i, pivotIndex); //Perform a quicksort with the array from i to pivotIndex
+        quickSortImplementation(array, comparator, i, pivotIndex - 1); //Perform a quicksort with the array from i to pivotIndex
         quickSortImplementation(array, comparator, pivotIndex + 1, j); //Perform a quicksort with the array from pivotIndex+1 to j
     }
 
