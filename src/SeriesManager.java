@@ -178,5 +178,12 @@ public class SeriesManager {
         }
     }
 
+    private static class TotalScoreComparator implements Comparator<Series> {
+        @Override
+        public int compare(Series s1, Series s2) {
+            return Integer.compare(s1.getTotalScore(), s2.getTotalScore());
+        }
+    }
+
 
 }

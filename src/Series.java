@@ -111,6 +111,14 @@ public class Series {
         return popularity;
     }
 
+    /**
+     * Returns the totalScore of this series
+     * <p>This number will be generated taking into account popularity, avg score and favourites
+     * @return Total Score of this Series
+     */
+    public int getTotalScore() {
+        return totalScore;
+    }
 
     @Override
     public String toString() {
