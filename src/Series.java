@@ -74,7 +74,6 @@ public class Series {
         startDate = new SeriesStartDate(yearMonthDate[0], yearMonthDate[1], yearMonthDate[2]);
 
         sanitize();
-        totalScore = (int)(0.4*popularity + 0.2*favourites + 0.4*averageScore);
     }
 
 
@@ -101,6 +100,8 @@ public class Series {
         if(favourites < 0) favourites = 0;
         if(favourites > popularity) favourites = popularity;
         if(!type.equals("MANGA") && !type.equals("ANIME")) type = null;
+
+        totalScore = (int)(0.4*popularity + 0.2*favourites + 0.4*averageScore);
     }
 
     /**
@@ -137,6 +138,7 @@ public class Series {
                 ", popularity=" + popularity +
                 ", averageScore=" + averageScore +
                 ", favourites=" + favourites +
+                ", totalScore=" + totalScore +
                 ", type='" + type + '\'' +
                 ", genres=" + Arrays.toString(genres) +
                 ", startDate=" + startDate.day + "/" + startDate.month + "/" + startDate.year +
