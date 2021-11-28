@@ -19,9 +19,14 @@ public class SeriesManager {
     private Series[] series;
 
     public enum SeriesComparator{
-        BY_POPULARITY, //First the ones with higher popularity
-        BY_PREMIERE_DATE, //First the ones with older premiere date
-        BY_TOTAL_SCORE //First the ones with higher total score
+        BY_POPULARITY(new PopularityComparator()), //First the ones with higher popularity
+        BY_PREMIERE_DATE(new PremiereDateComparator()), //First the ones with older premiere date
+        BY_TOTAL_SCORE(new TotalScoreComparator()); //First the ones with higher total score
+
+        Comparator<Series> comparator;
+        SeriesComparator(Comparator<Series> comparator){
+            this.comparator = comparator;
+        }
     }
 
     /**
