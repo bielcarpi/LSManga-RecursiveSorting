@@ -5,6 +5,7 @@ import com.google.gson.JsonSyntaxException;
 import java.io.*;
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
+import java.util.ArrayList;
 import java.util.Comparator;
 
 /**
@@ -161,11 +162,26 @@ public class SeriesManager {
     public void orderLoadedDataset(SeriesComparator comparator, SortUtility.SortType sortType){
         System.out.println("Ordering dataset of size " + series.length + " with " + sortType.name() + "...");
 
+        //Special case in Bucket Sort (as the algorithm can't user a comparator)
+        if(sortType == SortUtility.SortType.BUCKET_SORT){
+            if(comparator == SeriesComparator.BY_PREMIERE_DATE){
+                System.out.println("Error. Bucket Sort can't be used to order elements by premiere date yet.");
+                return;
+            }
+            else if(comparator == SeriesComparator.BY_POPULARITY){
+                ArrayList<Integer> popularityArrayList = new ArrayList<>();
+                for(Series s: series) popularityArrayList.add(s.getPopularity());
+                ArrayList<Integer> popularityArrayListOrdered = SortUtility.bucketSort(popularityArrayList);
+                for(Integer i: popularityArrayListOrdered) System.out.println(i);
+            }
+
+
+        }
+
         long startTime = System.nanoTime();
         switch (sortType) {
             case MERGE_SORT -> series = SortUtility.mergeSort(series, comparator.getComparator());
             case QUICKSORT -> SortUtility.quickSort(series, comparator.getComparator());
-            case BUCKET_SORT -> SortUtility.bucketSort(series, comparator.getComparator());
         }
         long endTime = System.nanoTime();
 
