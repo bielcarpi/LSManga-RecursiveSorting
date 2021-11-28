@@ -192,4 +192,19 @@ public class SortUtility {
         array[pos2] = aux; //pos2 is pos1
     }
 
+
+
+
+    /**
+     * Orders (using Recursive Bucket Sort) an array of {@code T Objects} given a {@link Comparator<T>} for that same {@code object}
+     * <p>The array passed as parameter will be the one modified (by reference). If you don't want this behavior,
+     *   be sure to pass a copy of the original array
+     *
+     * @see <a href="https://en.wikipedia.org/wiki/Bucket_sort">Bucket Sort</a>
+     *
+     * @param array The array that wants to be ordered
+     * @param comparator The criteria that will order the array
+     */
+    public static <T> void bucketSort(T[] array, Comparator<T> comparator){
+    }
 }
