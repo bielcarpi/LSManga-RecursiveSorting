@@ -200,19 +200,19 @@ public class SortUtility {
     /**
      * Orders (using Recursive Bucket Sort) an array of {@code Series} from bigger popularity to smaller popularity
      * <p>The array passed as parameter won't be modified. The ordered one will be returned.
-     * <p><b> Asdf
+     * <p><b>This implementation only works with k=2, and it's not optimized. Use it for reference only.
      *
      * @see <a href="https://en.wikipedia.org/wiki/Bucket_sort">Bucket Sort</a>
      * @param array The array that wants to be ordered
      */
     public static ArrayList<Series> bucketSort(ArrayList<Series> array){
-        //Custom bucket sort -->
-        //  We'll split the original array on two buckets each time.
+        //Custom bucket sort (with k=2 always) -->
+        //  We'll split the original array on two buckets each time (k=2).
         //  In one bucket, we'll put the values from biggerNum to midNum+1
         //  In the other bucket, we'll put the values from midNum to smallerNum
         //  We'll do this process recursively, until the array passed is of length <= 2. In
         //  this case, we'll order them (simple comparison of which one is bigger) and return
-        //  it ordered. The different arrays will get merged.
+        //  it ordered. The different arrays will then get merged.
 
         //Some work is needed in order to, in this facade, be given int[] instead of ArrayList<Integer>
         return bucketSortImplementation(array);
