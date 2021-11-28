@@ -23,6 +23,7 @@
 
 ## Features
 - [x] 3 Different Recursive Sorting Algorithms: QuickSort, MergeSort and BucketSort
+- [x] Algorithms are implemented using Generics (except for the BucketSort). Can be reused.
 - [x] Order the Datasets by Average Score, Premiere Date or by Popularity/Average Score/Favoritism
 - [x] Generate new Datasets
 - [x] Measure how long it takes for an algorithm to order a Dataset
@@ -43,4 +44,6 @@ $ brew cask install intellij-idea
 $ git clone https://github.com/bielcarpi/LSManga-RecursiveSorting
 
 # Open the project on IntelliJ and Run it
+# On the main() there is a basic explanation of how the program works
+# For a more detailed explanation, refer to the javadoc
 ```
