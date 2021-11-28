@@ -171,6 +171,7 @@ public class SeriesManager {
             System.out.println(i + " -> " + series[i].toString());
     }
 
+
     private static class PopularityComparator implements Comparator<Series> {
         @Override
         public int compare(Series s1, Series s2) {
@@ -182,6 +183,13 @@ public class SeriesManager {
         @Override
         public int compare(Series s1, Series s2) {
             return Integer.compare(s1.getTotalScore(), s2.getTotalScore());
+        }
+    }
+
+    private static class PremiereDateComparator implements Comparator<Series> {
+        @Override
+        public int compare(Series s1, Series s2){
+            return s1.getPremiereDate().compareTo(s2.getPremiereDate());
         }
     }
 

@@ -120,6 +120,16 @@ public class Series {
         return totalScore;
     }
 
+    /**
+     * Returns the premiere date of this Series
+     * @return Premiere date of this Series
+     * @see Calendar
+     */
+    public Calendar getPremiereDate() {
+        return startDate.calendar;
+    }
+
+
     @Override
     public String toString() {
         return "Series{" +
