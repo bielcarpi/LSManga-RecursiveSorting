@@ -10,7 +10,7 @@ public class Main {
     public static void main(String[] args){
         SeriesManager seriesManager = SeriesManager.getSeriesManager();
         seriesManager.loadDataset(Dataset.S);
-        seriesManager.orderLoadedDatasetWithMergeSort();
+        seriesManager.orderLoadedDatasetWithQuicksort();
         seriesManager.printSeriesLoaded();
     }
 
