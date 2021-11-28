@@ -1,5 +1,7 @@
 import java.lang.reflect.Array;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.Comparator;
 
 /**
@@ -196,15 +198,60 @@ public class SortUtility {
 
 
     /**
-     * Orders (using Recursive Bucket Sort) an array of {@code T Objects} given a {@link Comparator<T>} for that same {@code object}
-     * <p>The array passed as parameter will be the one modified (by reference). If you don't want this behavior,
-     *   be sure to pass a copy of the original array
+     * Orders (using Recursive Bucket Sort) an array of {@code Integers} from bigger to smaller
+     * <p>The array passed as parameter won't be modified. The ordered one will be returned.
      *
      * @see <a href="https://en.wikipedia.org/wiki/Bucket_sort">Bucket Sort</a>
      *
      * @param array The array that wants to be ordered
-     * @param comparator The criteria that will order the array
      */
-    public static <T> void bucketSort(T[] array, Comparator<T> comparator){
+    public static ArrayList<Integer> bucketSort(ArrayList<Integer> array){
+        //Custom bucket sort -->
+        //  We'll split the original array on two buckets each time.
+        //  In one bucket, we'll put the values from smallerNum to (biggerNum/2)
+        //  In the other bucket, we'll put the values from (biggerNum/2 + 1) to biggerNum
+        //  We'll do this process recursively, until the array passed is of length <= 2. In
+        //  this case, we'll order them (simple comparison of which one is bigger) and return
+        //  it ordered. The different arrays will get merged.
+
+        //Some work is needed in order to, in this facade, be given int[] instead of ArrayList<Integer>
+        return bucketSortImplementation(array);
     }
+
+    private static ArrayList<Integer> bucketSortImplementation(ArrayList<Integer> array){
+        //Trivial case --> If array length is >= 2, order it and return it
+        if(array.size() == 2){ //If its size is 2, we need to order it before returning it
+            //If the second position is bigger than the first position, swap them (we want them ordered from big to small)
+            if(array.get(1) > array.get(0)) Collections.swap(array, 1, 0);
+            return array;
+        }
+        else if(array.size() < 2){ //If it's less than size 2, it's already ordered
+            return array;
+        }
+
+        //Non-trivial case --> The array length is more than 2, so we need to create two
+        //  buckets and put the current array's values in these
+        int minNum = Integer.MAX_VALUE;
+        int maxNum = Integer.MIN_VALUE;
+        for(int i = 0; i < array.size(); i++){
+            if(array.get(i) < minNum) minNum = array.get(i); //If minT is bigger than array[i], array[i] is our new smaller
+            if(array.get(i) > maxNum) maxNum = array.get(i); //If array[i] is bigger than maxT, array[i] is our new bigger
+        }
+
+        int midNum = (maxNum+minNum)/2;
+        ArrayList<Integer> firstBucket = new ArrayList<>();
+        ArrayList<Integer> secondBucket = new ArrayList<>();
+
+        for(int i = 0; i < array.size(); i++){
+            if(array.get(i) <= midNum) firstBucket.add(array.get(i)); //Add number to the first bucket if it's less or equal than midNum
+            else if(array.get(i) > midNum) secondBucket.add(array.get(i)); //Add number to the second bucket if it's greater than midNum
+        }
+
+        ArrayList<Integer> firstBucketOrdered = bucketSortImplementation(firstBucket);
+        ArrayList<Integer> secondBucketOrdered = bucketSortImplementation(secondBucket);
+
+        firstBucketOrdered.addAll(secondBucketOrdered); //Merge secondBucketOrdered into firstBucketOrdered
+        return firstBucketOrdered; //Return both buckets ordered
+    }
+
 }
