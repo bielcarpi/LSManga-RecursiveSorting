@@ -27,6 +27,8 @@ public class SeriesManager {
         SeriesComparator(Comparator<Series> comparator){
             this.comparator = comparator;
         }
+
+        Comparator<Series> getComparator(){ return comparator; }
     }
 
     /**
@@ -148,25 +150,22 @@ public class SeriesManager {
 
 
     /**
-     * Orders the current dataset loaded with Merge Sort
+     * Orders the current dataset loaded, provided a {@link SeriesComparator} and {@link SortUtility.SortType}
+     * @param comparator The criteria that will order the dataset
+     * @param sortType The sorting algorithm to be used to order the dataset
+     * @see SeriesComparator
+     * @see SortUtility.SortType
      */
-    public void orderLoadedDatasetWithMergeSort(){
-        System.out.println("Ordering dataset of size " + series.length + " with Merge Sort...");
-        long startTime = System.nanoTime();
-        series = SortUtility.mergeSort(series, new PopularityComparator());
-        long endTime = System.nanoTime();
+    public void orderLoadedDataset(SeriesComparator comparator, SortUtility.SortType sortType){
+        System.out.println("Ordering dataset of size " + series.length + " with " + sortType.name());
+        System.out.println("..." + series.length + " with " + sortType.name());
 
-        System.out.println("Done! " + series.length + " elements ordered in " +
-                new DecimalFormat("#.##").format(((endTime-startTime)/1000000000.0)) + " seconds.");
-    }
-
-    /**
-     * Orders the current dataset loaded with Quicksort
-     */
-    public void orderLoadedDatasetWithQuicksort(){
-        System.out.println("Ordering dataset of size " + series.length + " with Quicksort...");
         long startTime = System.nanoTime();
-        SortUtility.quickSort(series, new PopularityComparator());
+        switch (sortType) {
+            case MERGE_SORT -> series = SortUtility.mergeSort(series, comparator.getComparator());
+            case QUICKSORT -> SortUtility.quickSort(series, comparator.getComparator());
+            case BUCKET_SORT -> SortUtility.bucketSort(series, comparator.getComparator());
+        }
         long endTime = System.nanoTime();
 
         System.out.println("Done! " + series.length + " elements ordered in " +
