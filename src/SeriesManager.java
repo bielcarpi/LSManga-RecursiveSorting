@@ -18,6 +18,12 @@ public class SeriesManager {
     private static SeriesManager seriesManager; //Singleton of the class
     private Series[] series;
 
+    public enum SeriesComparator{
+        BY_POPULARITY, //First the ones with higher popularity
+        BY_PREMIERE_DATE, //First the ones with older premiere date
+        BY_TOTAL_SCORE //First the ones with higher total score
+    }
+
     /**
      * Default Constructor
      * <p>Private as we want this class to be a singleton

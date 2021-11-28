@@ -14,6 +14,12 @@ import java.util.Comparator;
  */
 public class SortUtility {
 
+    public enum SortType{
+        MERGE_SORT,
+        QUICKSORT,
+        BUCKET_SORT
+    }
+
     /**
      * Orders (using merge sort) an array of {@code T Objects} given a {@link Comparator<T>} for that same {@code object}
      * <p>The array passed as parameter won't be modified. The one ordered will be returned
